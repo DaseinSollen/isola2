@@ -10,6 +10,11 @@ class ApiCameraController extends Controller
 {
     public function index()
     {
+
+    }
+
+    public function store()
+    {
         event(new NewCar("00AAA00"));
         return "Event Dispatched";
     }
