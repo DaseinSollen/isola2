@@ -17,6 +17,6 @@ class ApiCameraController extends Controller
     public function store(Request $request)
     {
         event(new NewCar($request->get('value','XX999XX')));
-        return "Event Dispatched";
+        return "Event Dispatched\n";
     }
 }
