@@ -38,8 +38,8 @@ class NewCar implements ShouldBroadcast
     public function broadcastWith(): array
     {
         return [
-            Splade::toastOnEvent('Nuova Auto')
-                    ->message('è in arrivo una nuova auto alla sbarra')
+            Splade::toastOnEvent('è in arrivo una nuova auto alla sbarra')
+                    ->title('Auto in arrivo')
                     ->autoDismiss(3)
                     ->info(),
         ];
