@@ -8,6 +8,7 @@ use App\Events\NewCar;
 use App\Models\CarPlate;
 use App\Models\Device;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 
 class ApiCameraController extends Controller
@@ -18,6 +19,7 @@ class ApiCameraController extends Controller
 
     public function new_car(Request $request)
     {
+        Log::info(json_encode($request->all()));
         $uuid = $request->get('device',['uuid' => null])['uuid'];
         if (Device::firstWhere('uuid',$uuid)){
             event(new NewCar(message: $request['carplate']['value'],image: $request['image_data']));
