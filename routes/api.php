@@ -15,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //Route::middleware('auth:sanctum')->group(function (){
-    Route::resource('/camera', ApiCameraController::class);
+    Route::apiResource('/camera', ApiCameraController::class);
 //});
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/camera',[ApiCameraController::class,'new_car']);

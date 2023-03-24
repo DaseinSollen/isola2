@@ -26,7 +26,27 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
+        'ip_address',
+        'private',
+        'house_number',
+        'address',
+        'surname',
+        'zip_code',
+        'CF',
+        'approved',
+        'company_name',
+        'note',
+        'contact_name',
+        'contact_surname',
+        'contract_confirm',
+        'phone',
+        'privacy_confirm',
+        'document_number',
+        'document_type',
+        'VAT_number'
     ];
 
     /**
@@ -37,6 +57,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'ip_address',
+        'document_number',
         'two_factor_recovery_codes',
         'two_factor_secret',
     ];

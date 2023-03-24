@@ -24,17 +24,40 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            'name' => $this->faker->name(),
-            'email' => $this->faker->unique()->safeEmail(),
+        $private = fake()->boolean;
+        $data = [];
+        if ($private){
+            $data['name'] = fake()->firstName;
+            $data['surname'] = fake()->lastName;
+            $data['document_type'] = collect(['Carta di identità','Passaporto','Patente'])->random();
+            $data['document_number'] = fake()->randomNumber(6,true);
+            $data['tax_code'] = fake()->text(16);
+        }else{
+            $data['company_name'] = fake()->company;
+            $data['VAT_number'] = fake()->randomNumber(9,true);
+            $data['contact_name'] = fake()->firstName;
+            $data['contact_surname'] = fake()->lastName;
+        }
+        return array_merge([
+            'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'remember_token' => Str::random(10),
+            'ip_address' => fake()->ipv4(),
+            'private' => $private,
+            'house_number' => fake()->buildingNumber,
+            'address' => fake()->streetAddress,
+            'zip_code' => fake()->postcode,
+            'approved' => fake()->boolean,
+            'note' => fake()->boolean ? fake()->text : null,
+            'contract_confirm' => fake()->boolean,
+            'phone' => fake()->phoneNumber,
+            'privacy_confirm' => fake()->boolean,
             'two_factor_secret' => null,
             'two_factor_recovery_codes' => null,
-            'remember_token' => Str::random(10),
             'profile_photo_path' => null,
             'current_team_id' => null,
-        ];
+        ],$data);
     }
 
     /**

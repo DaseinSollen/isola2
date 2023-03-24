@@ -16,4 +16,6 @@
     <main>
         {{ $slot }}
     </main>
+
+    <x-splade-event channel="sensors" listen="NewCar" />
 </div>
