@@ -22,7 +22,7 @@ class NewCar implements ShouldBroadcast
     public function __construct($message,$image)
     {
         $this->message = $message;
-        $this->image = $image;
+        $this->image = $image ?? '';
     }
 
     /**
