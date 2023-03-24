@@ -14,13 +14,15 @@ class NewCar implements ShouldBroadcast
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public string $message;
+    public string $image;
 
     /**
      * Create a new event instance.
      */
-    public function __construct($message)
+    public function __construct($message,$image)
     {
         $this->message = $message;
+        $this->image = $image;
     }
 
     /**
@@ -40,8 +42,9 @@ class NewCar implements ShouldBroadcast
         return [
             Splade::toastOnEvent('è in arrivo una nuova auto alla sbarra con targa ['.$this->message.']')
                     ->title('Auto in arrivo')
-                    ->autoDismiss(5)
+                    ->autoDismiss(8)
                     ->info(),
+            'image' => $this->image
         ];
     }
 }

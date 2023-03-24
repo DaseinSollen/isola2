@@ -17,5 +17,8 @@
         {{ $slot }}
     </main>
 
-    <x-splade-event channel="sensors" listen="NewCar" />
+    <x-splade-event channel="sensors" listen="NewCar" >
+        <img v-bind:src="events[0]?.data?.image" class="h-80 w-80 bg-gray-200"></img>
+    </x-splade-event>
+    <x-splade-event channel="car-plate-found" listen="CarPlateFound" />
 </div>

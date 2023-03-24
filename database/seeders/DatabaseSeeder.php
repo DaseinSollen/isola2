@@ -20,6 +20,12 @@ class DatabaseSeeder extends Seeder
          User::factory()->withPersonalTeam()->create([
              'name' => 'Dennis',
              'email' => 'dennispirotta@gmail.com',
+             'private' => true,
+             'surname' => 'Pirotta',
+             'approved' => true,
+             'document_type' => 'Carta di Identità',
+             'document_number' => 'IX7394AV',
+             'tax_code' => 'PRTDNS03E20C933U'
          ]);
          Device::factory()->create([
              'uuid' => 'd1857a80-d8e1-33db-82bb-cad2885d5e55',
