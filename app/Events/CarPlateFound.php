@@ -45,7 +45,7 @@ class CarPlateFound implements ShouldBroadcast
             Splade::toastOnEvent("La targa è stata riconosciuta {$target} {$name}")
                 ->title('Targa riconosciuta')
                 ->autoDismiss(8)
-                ->info(),
+                ->success(),
         ];
     }
 }
