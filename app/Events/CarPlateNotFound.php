@@ -2,7 +2,6 @@
 
 namespace App\Events;
 
-use App\Models\CarPlate;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
@@ -10,16 +9,16 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use ProtoneMedia\Splade\Facades\Splade;
 
-class CarPlateFound implements ShouldBroadcast
+class CarPlateNotFound implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public CarPlate $car_plate;
+    public string $car_plate;
 
     /**
      * Create a new event instance.
      */
-    public function __construct(CarPlate $car_plate)
+    public function __construct($car_plate)
     {
         $this->car_plate = $car_plate;
     }
@@ -36,16 +35,14 @@ class CarPlateFound implements ShouldBroadcast
         ];
     }
 
+
     public function broadcastWith(): array
     {
-        $user = $this->car_plate->user;
-        $user->private ? $name = $user->name . ' ' . $user->surname : $name = $user->company_name;
-        $user->private ? $target = "all'utente" : $target = "all'azienda";
         return [
-            Splade::toastOnEvent("La targa è stata riconosciuta {$target} {$name}")
+            Splade::toastOnEvent("La targa {$this->car_plate} non è stata riconosciuta")
                 ->title('Targa riconosciuta')
                 ->autoDismiss(8)
-                ->info(),
+                ->danger(),
         ];
     }
 }
