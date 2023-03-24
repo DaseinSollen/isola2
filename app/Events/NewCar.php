@@ -19,7 +19,7 @@ class NewCar implements ShouldBroadcast
     /**
      * Create a new event instance.
      */
-    public function __construct($message,$image)
+    public function __construct($message,$image = '')
     {
         $this->message = $message;
         $this->image = $image;
