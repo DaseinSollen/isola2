@@ -20,5 +20,5 @@
     <x-splade-event channel="sensors" listen="NewCar" >
         <img :src="events[0]?.data?.image" class="h-80 w-80 bg-gray-200"/>
     </x-splade-event>
-    <x-splade-event channel="car-plate-status" listen="CarPlateFound" />
+    <x-splade-event channel="car-plate-status" listen="CarPlateFound, CarPlateNotFound" />
 </div>
