@@ -1,7 +1,7 @@
 <x-banner />
 
 <div class="min-h-screen bg-gray-100">
-    <x-navigation />
+    <x-admin-navigation />
 
     <!-- Page Heading -->
     @isset($header)
@@ -16,4 +16,9 @@
     <main>
         {{ $slot }}
     </main>
+
+    <x-splade-event channel="sensors" listen="NewCar" >
+        <img :src="events[events.length -1]?.data?.image" class="h-80 w-80 bg-gray-200" alt=""/>
+    </x-splade-event>
+    <x-splade-event channel="car-plate-status" listen="CarPlateFound, CarPlateNotFound" />
 </div>

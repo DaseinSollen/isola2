@@ -107,6 +107,6 @@ class OperatorController extends Controller
 
     public function loginform()
     {
-        return view('auth.login',['guard' => 'admin']);
+        return view('operators.login',['guard' => 'admin']);
     }
 }

@@ -11,8 +11,8 @@
         </div>
     @endif
 
-    <x-splade-form class="space-y-4">
-        <x-splade-input id="username" name="username" type="text" :label="__('Username')" required autofocus />
+    <x-splade-form class="space-y-4" action="{{ route('admin.login') }}">
+        <x-splade-input id="email" name="email" type="email" :label="__('Admin Email')" required autofocus />
         <x-splade-input id="password" name="password" type="password" :label="__('Password')" required autocomplete="current-password" />
         <x-splade-checkbox name="remember">{{ __('Remember me') }}</x-splade-checkbox>
 

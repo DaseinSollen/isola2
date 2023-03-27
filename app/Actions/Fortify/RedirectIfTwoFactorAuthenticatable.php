@@ -20,14 +20,14 @@ class RedirectIfTwoFactorAuthenticatable
      *
      * @var StatefulGuard
      */
-    protected $guard;
+    protected StatefulGuard $guard;
 
     /**
      * The login rate limiter instance.
      *
      * @var LoginRateLimiter
      */
-    protected $limiter;
+    protected LoginRateLimiter $limiter;
 
     /**
      * Create a new controller instance.
@@ -45,11 +45,11 @@ class RedirectIfTwoFactorAuthenticatable
     /**
      * Handle the incoming request.
      *
-     * @param  Request  $request
-     * @param  callable  $next
+     * @param Request $request
+     * @param callable $next
      * @return mixed
      */
-    public function handle($request, $next)
+    public function handle(Request $request, callable $next): mixed
     {
         $user = $this->validateCredentials($request);
 
@@ -74,10 +74,10 @@ class RedirectIfTwoFactorAuthenticatable
     /**
      * Attempt to validate the incoming credentials.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @return mixed
      */
-    protected function validateCredentials($request)
+    protected function validateCredentials(Request $request): mixed
     {
         if (Fortify::$authenticateUsingCallback) {
             return tap(call_user_func(Fortify::$authenticateUsingCallback, $request), function ($user) use ($request) {
@@ -92,7 +92,7 @@ class RedirectIfTwoFactorAuthenticatable
         $model = $this->guard->getProvider()->getModel();
 
         return tap($model::where(Fortify::username(), $request->{Fortify::username()})->first(), function ($user) use ($request) {
-            if (! $user || ! $this->guard->getProvider()->validateCredentials($user, ['password' => $request->password])) {
+            if (! $user || ! $this->guard->getProvider()->validateCredentials($user, ['password' => $request->get('password')])) {
                 $this->fireFailedEvent($request, $user);
 
                 $this->throwFailedAuthenticationException($request);
@@ -103,12 +103,12 @@ class RedirectIfTwoFactorAuthenticatable
     /**
      * Throw a failed authentication validation exception.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @return void
      *
      * @throws ValidationException
      */
-    protected function throwFailedAuthenticationException($request)
+    protected function throwFailedAuthenticationException(Request $request): void
     {
         $this->limiter->increment($request);
 
@@ -120,26 +120,26 @@ class RedirectIfTwoFactorAuthenticatable
     /**
      * Fire the failed authentication attempt event with the given arguments.
      *
-     * @param  Request  $request
-     * @param  Authenticatable|null  $user
+     * @param Request $request
+     * @param Authenticatable|null $user
      * @return void
      */
-    protected function fireFailedEvent($request, $user = null)
+    protected function fireFailedEvent(Request $request, Authenticatable $user = null): void
     {
         event(new Failed(config('fortify.guard'), $user, [
             Fortify::username() => $request->{Fortify::username()},
-            'password' => $request->password,
+            'password' => $request->get('password'),
         ]));
     }
 
     /**
-     * Get the two factor authentication enabled response.
+     * Get the two-factor authentication enabled response.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @param  mixed  $user
      * @return Response
      */
-    protected function twoFactorChallengeResponse($request, $user)
+    protected function twoFactorChallengeResponse(Request $request, mixed $user): Response
     {
         $request->session()->put([
             'login.id' => $user->getKey(),

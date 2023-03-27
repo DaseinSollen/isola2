@@ -16,14 +16,14 @@ class AttemptToAuthenticate
      *
      * @var StatefulGuard
      */
-    protected $guard;
+    protected StatefulGuard $guard;
 
     /**
      * The login rate limiter instance.
      *
      * @var LoginRateLimiter
      */
-    protected $limiter;
+    protected LoginRateLimiter $limiter;
 
     /**
      * Create a new controller instance.
@@ -41,11 +41,11 @@ class AttemptToAuthenticate
     /**
      * Handle the incoming request.
      *
-     * @param  Request  $request
-     * @param  callable  $next
+     * @param Request $request
+     * @param callable $next
      * @return mixed
      */
-    public function handle($request, $next)
+    public function handle(Request $request, callable $next): mixed
     {
         if (Fortify::$authenticateUsingCallback) {
             return $this->handleUsingCustomCallback($request, $next);
@@ -64,11 +64,11 @@ class AttemptToAuthenticate
     /**
      * Attempt to authenticate using a custom callback.
      *
-     * @param  Request  $request
-     * @param  callable  $next
+     * @param Request $request
+     * @param callable $next
      * @return mixed
      */
-    protected function handleUsingCustomCallback($request, $next)
+    protected function handleUsingCustomCallback(Request $request, callable $next): mixed
     {
         $user = call_user_func(Fortify::$authenticateUsingCallback, $request);
 
@@ -86,12 +86,12 @@ class AttemptToAuthenticate
     /**
      * Throw a failed authentication validation exception.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @return void
      *
      * @throws ValidationException
      */
-    protected function throwFailedAuthenticationException($request)
+    protected function throwFailedAuthenticationException(Request $request): void
     {
         $this->limiter->increment($request);
 
@@ -103,14 +103,14 @@ class AttemptToAuthenticate
     /**
      * Fire the failed authentication attempt event with the given arguments.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @return void
      */
-    protected function fireFailedEvent($request)
+    protected function fireFailedEvent(Request $request): void
     {
         event(new Failed(config('fortify.guard'), null, [
             Fortify::username() => $request->{Fortify::username()},
-            'password' => $request->password,
+            'password' => $request->get('password'),
         ]));
     }
 }

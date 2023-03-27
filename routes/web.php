@@ -41,13 +41,13 @@ Route::middleware(['splade'])->group(function () {
         Route::view('/dashboard', 'dashboard')->name('dashboard');
     });
 
-    Route::group(['prefix' =>'admin','middleware'=> ['admin:admin']],function() {
+    Route::group(['prefix' => 'admin' ,'middleware'=> ['admin:admin']], function() {
         Route::get('/login', [OperatorController::class, 'loginform']);
         Route::post('/login', [OperatorController::class, 'store'])->name('admin.login');
     });
 
-    Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', function () {
-        return view('dashboard');
-    })->name('admin.dashboard');
+    Route::group(['middleware' => ['auth:admin', 'verified'],'prefix' => 'admin'],function () {
+        Route::view('/dashboard', 'operators.dashboard')->name('admin.dashboard');
+    });
 
 });

@@ -20,7 +20,8 @@ class OperatorFactory extends Factory
     {
         return [
             'email' => fake()->email,
-            'password' => Hash::make('password')
+            'password' => Hash::make('password'),
+            'name' => fake()->name
         ];
     }
 }

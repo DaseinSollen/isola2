@@ -40,7 +40,8 @@ class DatabaseSeeder extends Seeder
          Operator::factory(5)->create();
          Operator::factory()->create([
              'email' => 'admin@admin.it',
-             'password' => Hash::make('password')
+             'password' => Hash::make('password'),
+             'name' => 'admin'
          ]);
     }
 }
