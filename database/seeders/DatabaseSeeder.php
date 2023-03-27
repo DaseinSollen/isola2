@@ -7,6 +7,7 @@ use App\Models\CarPlate;
 use App\Models\Device;
 use App\Models\Operator;
 use App\Models\User;
+use Hash;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -37,5 +38,9 @@ class DatabaseSeeder extends Seeder
          User::factory(5)->create();
          CarPlate::factory(10)->create();
          Operator::factory(5)->create();
+         Operator::factory()->create([
+             'email' => 'admin@admin.it',
+             'password' => Hash::make('password')
+         ]);
     }
 }

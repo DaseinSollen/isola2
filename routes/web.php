@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OperatorController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 
@@ -36,11 +37,17 @@ Route::middleware(['splade'])->group(function () {
         ]);
     });
 
-    Route::middleware([
-        'auth:sanctum',
-        config('jetstream.auth_session'),
-        'verified',
-    ])->group(function () {
+    Route::middleware(['auth:sanctum', config('jetstream.auth_session'),  'verified'])->group(function () {
         Route::view('/dashboard', 'dashboard')->name('dashboard');
     });
+
+    Route::group(['prefix' =>'admin','middleware'=> ['admin:admin']],function() {
+        Route::get('/login', [OperatorController::class, 'loginform']);
+        Route::post('/login', [OperatorController::class, 'store'])->name('admin.login');
+    });
+
+    Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', function () {
+        return view('dashboard');
+    })->name('admin.dashboard');
+
 });

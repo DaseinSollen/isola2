@@ -19,7 +19,7 @@ class OperatorFactory extends Factory
     public function definition(): array
     {
         return [
-            'username' => fake()->userName,
+            'email' => fake()->email,
             'password' => Hash::make('password')
         ];
     }

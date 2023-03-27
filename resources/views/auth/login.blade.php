@@ -11,7 +11,7 @@
         </div>
     @endif
 
-    <x-splade-form class="space-y-4">
+    <x-splade-form class="space-y-4" action="{{ isset($guard) ? url($guard. '/login') : route('login') }}">
         <x-splade-input id="email" name="email" type="email" :label="__('Email')" required autofocus />
         <x-splade-input id="password" name="password" type="password" :label="__('Password')" required autocomplete="current-password" />
         <x-splade-checkbox name="remember">{{ __('Remember me') }}</x-splade-checkbox>
