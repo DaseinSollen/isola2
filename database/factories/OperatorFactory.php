@@ -2,10 +2,12 @@
 
 namespace Database\Factories;
 
+use App\Models\Operator;
+use Hash;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Operator>
+ * @extends Factory<Operator>
  */
 class OperatorFactory extends Factory
 {
@@ -17,7 +19,8 @@ class OperatorFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'username' => fake()->userName,
+            'password' => Hash::make('password')
         ];
     }
 }

@@ -3,7 +3,7 @@
 <x-authentication-card>
     <x-slot:logo>
         <x-authentication-card-logo />
-    </x-slot>
+    </x-slot:logo>
 
     @if($status = session('status'))
         <div class="mb-4 font-medium text-sm text-green-600">

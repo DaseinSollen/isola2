@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\CarPlate;
 use App\Models\Device;
+use App\Models\Operator;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -35,5 +36,6 @@ class DatabaseSeeder extends Seeder
          ]);
          User::factory(5)->create();
          CarPlate::factory(10)->create();
+         Operator::factory(5)->create();
     }
 }

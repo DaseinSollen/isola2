@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Operators;
 
+use App\Http\Controllers\Controller;
 use App\Models\Operator;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,7 @@ class OperatorController extends Controller
      */
     public function index()
     {
-        //
+        return "Operator page";
     }
 
     /**
