@@ -53,9 +53,9 @@
     <link rel="stylesheet" href="{{ Vite::asset('resources/welcome/css/style.css') }}">
     <link rel="stylesheet" href="{{ Vite::asset('resources/welcome/css/responsive.css') }}">
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ Vite::asset('resources/welcome/images/favicon/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" href="{{ Vite::asset('resources/welcome/images/favicon/favicon-32x32.png') }}" sizes="32x32">
-    <link rel="icon" type="image/png" href="{{ Vite::asset('resources/welcome/images/favicon/favicon-16x16.png') }}" sizes="16x16">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/favicon/favicon-32x32.png') }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ asset('images/favicon/favicon-16x16.png') }}" sizes="16x16">
 
     <!-- Fixing Internet Explorer-->
     <!--[if lt IE 9]>
@@ -90,7 +90,7 @@
     <!-- switcher menu -->
     <div class="switcher">
         <div class="switch_btn">
-            <button><img src="{{ Vite::asset('resources/welcome/images/icon/color-palette.png') }}" alt="Color Palette"> </button>
+            <button><img src="{{ asset('images/icon/color-palette.png') }}" alt="Color Palette"> </button>
         </div>
         <div class="switch_menu">
             <!-- color changer -->
@@ -184,7 +184,7 @@
                     <div class="header-left">
                         <div class="main-logo-box">
                             <a href="index.html">
-                                <img src="{{Vite::asset('resources/welcome/images/resources/logo.png')}}" alt="Awesome Logo" title="">
+                                <img src="{{asset('images/resources/logo.png')}}" alt="Awesome Logo" title="">
                             </a>
                         </div>
                         <div class="header-social-link">
@@ -396,7 +396,7 @@
                     <!--Logo-->
                     <div class="logo float-left">
                         <a href="index.html" class="img-responsive">
-                            <img src="{{Vite::asset('resources/welcome/images/resources/sticky-logo.png')}}" alt="" title="">
+                            <img src="{{asset('images/resources/sticky-logo.png')}}" alt="" title="">
                         </a>
                     </div>
                     <!--Right Col-->
@@ -416,7 +416,7 @@
             <div class="menu-backdrop"></div>
             <div class="close-btn"><span class="icon fa fa-times-circle"></span></div>
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="{{Vite::asset('resources/welcome/images/resources/mobilemenu-logo.png')}}"
+                <div class="nav-logo"><a href="index.html"><img src="{{asset('images/resources/mobilemenu-logo.png')}}"
                                                                 alt="" title=""></a></div>
                 <div class="menu-outer">
                     <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
@@ -445,7 +445,7 @@
             <div class="banner-carousel owl-theme owl-carousel">
                 <!-- Slide -->
                 <div class="slide">
-                    <div class="image-layer" style="background-image:url({{ Vite::asset('resources/welcome/images/slides/slide-v1-1.jpg')}})">
+                    <div class="image-layer" style="background-image:url({{ asset('images/slides/slide-v1-1.jpg')}})">
                     </div>
                     <div class="auto-container">
                         <div class="content">
@@ -470,7 +470,7 @@
 
                 <!-- Slide -->
                 <div class="slide">
-                    <div class="image-layer" style="background-image:url({{Vite::asset('resources/welcome/images/slides/slide-v1-2.jpg')}})">
+                    <div class="image-layer" style="background-image:url({{asset('images/slides/slide-v1-2.jpg')}})">
                     </div>
                     <div class="auto-container">
                         <div class="content">
@@ -495,7 +495,7 @@
 
                 <!-- Slide -->
                 <div class="slide">
-                    <div class="image-layer" style="background-image:url({{Vite::asset('resources/welcome/images/slides/slide-v1-3.jpg')}})">
+                    <div class="image-layer" style="background-image:url({{asset('images/slides/slide-v1-3.jpg')}})">
                     </div>
                     <div class="auto-container">
                         <div class="content">
@@ -596,12 +596,12 @@
                         <ul>
                             <li>
                                 <div class="img-box">
-                                    <img src="{{Vite::asset('resources/welcome/images/about/about-style1__image-1.jpg')}}" alt="">
+                                    <img src="{{asset('images/about/about-style1__image-1.jpg')}}" alt="">
                                 </div>
                             </li>
                             <li>
                                 <div class="img-box">
-                                    <img src="{{Vite::asset('resources/welcome/images/about/about-style1__image-2.jpg')}}" alt="">
+                                    <img src="{{asset('images/about/about-style1__image-2.jpg')}}" alt="">
                                 </div>
                             </li>
                         </ul>
@@ -679,7 +679,7 @@
                                     <div class="col-xl-6 col-lg-6 col-md-6">
                                         <div class="video-gallery-style1">
                                             <div class="video-gallery-style1__bg"
-                                                 style="background-image: url({{Vite::asset('resources/welcome/images/resources/video-gallery-style1-bg.jpg')}});">
+                                                 style="background-image: url({{asset('images/resources/video-gallery-style1-bg.jpg')}});">
                                             </div>
                                             <div class="icon wow zoomIn animated" data-wow-delay="300ms"
                                                  data-wow-duration="1500ms">
@@ -706,7 +706,7 @@
     <!--Start Service Style1 Area-->
     <section class="service-style1-area">
         <div class="service-style1__bg"
-             style="background-image: url({{Vite::asset('resources/welcome/images/parallax-background/service-style1.jpg')}});"></div>
+             style="background-image: url({{asset('images/parallax-background/service-style1.jpg')}});"></div>
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -845,7 +845,7 @@
                                                 <div class="col-xl-3 order-22">
                                                     <div class="img-box">
                                                         <div class="inner">
-                                                            <img src="{{Vite::asset('resources/welcome/images/testimonial/testimonial-v1-1-big.jpg')}}"
+                                                            <img src="{{asset('images/testimonial/testimonial-v1-1-big.jpg')}}"
                                                                  alt="">
                                                         </div>
                                                         <div class="quote-icon">
@@ -879,7 +879,7 @@
                                                 <div class="col-xl-3 order-22">
                                                     <div class="img-box">
                                                         <div class="inner">
-                                                            <img src="{{Vite::asset('resources/welcome/images/testimonial/testimonial-v1-2-big.jpg')}}"
+                                                            <img src="{{asset('images/testimonial/testimonial-v1-2-big.jpg')}}"
                                                                  alt="">
                                                         </div>
                                                         <div class="quote-icon">
@@ -913,7 +913,7 @@
                                                 <div class="col-xl-3 order-22">
                                                     <div class="img-box">
                                                         <div class="inner">
-                                                            <img src="{{Vite::asset('resources/welcome/images/testimonial/testimonial-v1-3-big.jpg')}}"
+                                                            <img src="{{asset('images/testimonial/testimonial-v1-3-big.jpg')}}"
                                                                  alt="">
                                                         </div>
                                                         <div class="quote-icon">
@@ -948,17 +948,17 @@
                             <div class="swiper-wrapper rtl-carousel">
                                 <div class="swiper-slide">
                                     <div class="testimonial-style1__img-holder">
-                                        <img src="{{Vite::asset('resources/welcome/images/testimonial/testimonial-v1-1-thumb.jpg')}}" alt="">
+                                        <img src="{{asset('images/testimonial/testimonial-v1-1-thumb.jpg')}}" alt="">
                                     </div>
                                 </div><!-- /.swiper-slide -->
                                 <div class="swiper-slide">
                                     <div class="testimonial-style1__img-holder">
-                                        <img src="{{Vite::asset('resources/welcome/images/testimonial/testimonial-v1-2-thumb.jpg')}}" alt="">
+                                        <img src="{{asset('images/testimonial/testimonial-v1-2-thumb.jpg')}}" alt="">
                                     </div>
                                 </div><!-- /.swiper-slide -->
                                 <div class="swiper-slide">
                                     <div class="testimonial-style1__img-holder">
-                                        <img src="{{Vite::asset('resources/welcome/images/testimonial/testimonial-v1-3-thumb.jpg')}}" alt="">
+                                        <img src="{{asset('images/testimonial/testimonial-v1-3-thumb.jpg')}}" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -981,22 +981,22 @@
                     <ul class="partner-box partner-carousel owl-carousel owl-theme owl-dot-style1 rtl-carousel">
                         <!--Start Single Partner Logo Box-->
                         <li class="single-partner-logo-box">
-                            <a href="#"><img src="{{Vite::asset('resources/welcome/images/brand/brand-logo-1.png')}}" alt="Awesome Image"></a>
+                            <a href="#"><img src="{{asset('images/brand/brand-logo-1.png')}}" alt="Awesome Image"></a>
                         </li>
                         <!--End Single Partner Logo Box-->
                         <!--Start Single Partner Logo Box-->
                         <li class="single-partner-logo-box">
-                            <a href="#"><img src="{{Vite::asset('resources/welcome/images/brand/brand-logo-2.png')}}" alt="Awesome Image"></a>
+                            <a href="#"><img src="{{asset('images/brand/brand-logo-2.png')}}" alt="Awesome Image"></a>
                         </li>
                         <!--End Single Partner Logo Box-->
                         <!--Start Single Partner Logo Box-->
                         <li class="single-partner-logo-box">
-                            <a href="#"><img src="{{Vite::asset('resources/welcome/images/brand/brand-logo-3.png')}}" alt="Awesome Image"></a>
+                            <a href="#"><img src="{{asset('images/brand/brand-logo-3.png')}}" alt="Awesome Image"></a>
                         </li>
                         <!--End Single Partner Logo Box-->
                         <!--Start Single Partner Logo Box-->
                         <li class="single-partner-logo-box">
-                            <a href="#"><img src="{{Vite::asset('resources/welcome/images/brand/brand-logo-4.png')}}" alt="Awesome Image"></a>
+                            <a href="#"><img src="{{asset('images/brand/brand-logo-4.png')}}" alt="Awesome Image"></a>
                         </li>
                         <!--End Single Partner Logo Box-->
                     </ul>
@@ -1029,14 +1029,14 @@
                 <div class="col-xl-6 col-lg-6">
                     <div class="single-features-style2-box">
                         <div class="img-bg"
-                             style="background-image: url({{Vite::asset('resources/welcome/images/resources/features-style2-1.jpg')}});"></div>
+                             style="background-image: url({{asset('images/resources/features-style2-1.jpg')}});"></div>
                     </div>
                 </div>
 
                 <div class="col-xl-6 col-lg-6">
                     <div class="single-features-style2-box">
                         <div class="img-bg"
-                             style="background-image: url({{Vite::asset('resources/welcome/images/resources/features-style2-2.jpg')}});"></div>
+                             style="background-image: url({{asset('images/resources/features-style2-2.jpg')}});"></div>
                     </div>
                 </div>
 
@@ -1076,7 +1076,7 @@
                 <div class="col-xl-4 col-lg-4">
                     <div class="single-service-style2">
                         <div class="img-holder">
-                            <img src="{{Vite::asset('resources/welcome/images/services/service-v1-1.jpg')}}" alt="">
+                            <img src="{{asset('images/services/service-v1-1.jpg')}}" alt="">
                             <div class="icon-box">
                                 <span class="icon-store"></span>
                             </div>
@@ -1093,7 +1093,7 @@
                 <div class="col-xl-4 col-lg-4">
                     <div class="single-service-style2">
                         <div class="img-holder">
-                            <img src="{{Vite::asset('resources/welcome/images/services/service-v1-2.jpg')}}" alt="">
+                            <img src="{{asset('images/services/service-v1-2.jpg')}}" alt="">
                             <div class="icon-box">
                                 <span class="icon-restaurant"></span>
                             </div>
@@ -1110,7 +1110,7 @@
                 <div class="col-xl-4 col-lg-4">
                     <div class="single-service-style2">
                         <div class="img-holder">
-                            <img src="{{Vite::asset('resources/welcome/images/services/service-v1-3.jpg')}}" alt="">
+                            <img src="{{asset('images/services/service-v1-3.jpg')}}" alt="">
                             <div class="icon-box">
                                 <span class="icon-stethoscope"></span>
                             </div>
@@ -1155,7 +1155,7 @@
                 <div class="col-xl-8">
                     <div class="video-gallery-style2">
                         <div class="video-gallery-style2__bg"
-                             style="background-image: url({{Vite::asset('resources/welcome/images/resources/video-gallery-style2-bg.jpg')}});">
+                             style="background-image: url({{asset('images/resources/video-gallery-style2-bg.jpg')}});">
                         </div>
                         <div class="icon wow zoomIn animated" data-wow-delay="300ms" data-wow-duration="1500ms">
                             <a class="video-popup" title="Video Gallery"
@@ -1175,7 +1175,7 @@
     <!--Start Fact Counter Area-->
     <section class="fact-counter-area">
         <div class="fact-counter-area-bg"
-             style="background-image: url({{Vite::asset('resources/welcome/images/parallax-background/service-style1.jpg')}});"></div>
+             style="background-image: url({{asset('images/parallax-background/service-style1.jpg')}});"></div>
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -1264,7 +1264,7 @@
                                 <div class="single-blog-style1__inner">
                                     <div class="img-holder">
                                         <div class="inner">
-                                            <img src="{{Vite::asset('resources/welcome/images/blog/blog-v1-1.jpg')}}" alt="" />
+                                            <img src="{{asset('images/blog/blog-v1-1.jpg')}}" alt="" />
                                         </div>
                                         <div class="date-box">
                                             <h6>16<br> <span>Nov</span></h6>
@@ -1301,7 +1301,7 @@
                                 <div class="single-blog-style1__inner">
                                     <div class="img-holder">
                                         <div class="inner">
-                                            <img src="{{Vite::asset('resources/welcome/images/blog/blog-v1-2.jpg')}}" alt="" />
+                                            <img src="{{asset('images/blog/blog-v1-2.jpg')}}" alt="" />
                                         </div>
                                         <div class="date-box">
                                             <h6>11<br> <span>Nov</span></h6>
@@ -1339,7 +1339,7 @@
                                 <div class="single-blog-style1__inner">
                                     <div class="img-holder">
                                         <div class="inner">
-                                            <img src="{{Vite::asset('resources/welcome/images/blog/blog-v1-1.jpg')}}" alt="" />
+                                            <img src="{{asset('blog/blog-v1-1.jpg')}}" alt="" />
                                         </div>
                                         <div class="date-box">
                                             <h6>16<br> <span>Nov</span></h6>
@@ -1376,7 +1376,7 @@
                                 <div class="single-blog-style1__inner">
                                     <div class="img-holder">
                                         <div class="inner">
-                                            <img src="{{Vite::asset('resources/welcome/images/blog/blog-v1-2.jpg')}}" alt="" />
+                                            <img src="{{asset('images/blog/blog-v1-2.jpg')}}" alt="" />
                                         </div>
                                         <div class="date-box">
                                             <h6>11<br> <span>Nov</span></h6>
@@ -1414,7 +1414,7 @@
                                 <div class="single-blog-style1__inner">
                                     <div class="img-holder">
                                         <div class="inner">
-                                            <img src="{{Vite::asset('resources/welcome/images/blog/blog-v1-1.jpg')}}" alt="" />
+                                            <img src="{{asset('images/blog/blog-v1-1.jpg')}}" alt="" />
                                         </div>
                                         <div class="date-box">
                                             <h6>16<br> <span>Nov</span></h6>
@@ -1452,7 +1452,7 @@
                                 <div class="single-blog-style1__inner">
                                     <div class="img-holder">
                                         <div class="inner">
-                                            <img src="{{Vite::asset('resources/welcome/images/blog/blog-v1-2.jpg')}}" alt="" />
+                                            <img src="{{asset('images/blog/blog-v1-2.jpg')}}" alt="" />
                                         </div>
                                         <div class="date-box">
                                             <h6>11<br> <span>Nov</span></h6>
@@ -1541,7 +1541,7 @@
                 <!--Map Canvas-->
                 <div class="map-canvas" data-zoom="12" data-lat="-37.817085" data-lng="144.955631"
                      data-type="roadmap" data-hue="#ffc400" data-title="Envato"
-                     data-icon-path="assets/images/icon/map-marker.png"
+                     data-icon-path="{{asset('images/icon/map-marker.png')}}"
                      data-content="Melbourne VIC 3000, Australia<br><a href='mailto:info@youremail.com'>info@youremail.com</a>">
                 </div>
             </div>
@@ -1553,7 +1553,7 @@
     <div class="bottom-parallax">
         <!--Start footer area -->
         <footer class="footer-area">
-            <div class="footer-area-bg" style="background-image: url({{Vite::asset('resources/welcome/images/resources/footer-bg-1.png')}});">
+            <div class="footer-area-bg" style="background-image: url({{asset('images/resources/footer-bg-1.png')}});">
             </div>
 
             <div class="footer-top">

@@ -59,3 +59,5 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
+Route::get('403', fn() => view('errors.403'));

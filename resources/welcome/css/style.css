@@ -1085,7 +1085,7 @@ li {
     font-size: 22px;
     color: #ffffff;
     cursor: pointer;
-    background-image: url(../images/icon/icon-cross.png);
+    background-image: url(../../../public/images/icon/icon-cross.png);
     width: 40px;
     height: 40px;
     z-index: 5;
@@ -1232,7 +1232,7 @@ li {
     z-index: 999999999999999;
     background-position: center center;
     background-repeat: no-repeat;
-    background-image: url(../images/icon/preloader.svg);
+    background-image: url(../../../public/images/icon/preloader.svg);
 }
 
 .preloader-close {
@@ -1545,7 +1545,7 @@ select:focus {
 
 
 
-/*** 
+/***
 ========================================
     Mobile Menu
 ========================================
@@ -1873,7 +1873,7 @@ select:focus {
     visibility: hidden;
     transition: all 200ms linear;
     transition-delay: 0.1s;
-    cursor: url(../images/icon/cross-out.png), pointer;
+    cursor: url(../../../public/images/icon/cross-out.png), pointer;
     z-index: 99999999;
 }
 
@@ -2190,7 +2190,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Features Style1 Content Css
 =============================================
@@ -2318,7 +2318,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Features style2 Area Css
 =============================================
@@ -2439,7 +2439,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Features Style3 Area Css
 =============================================
@@ -2572,7 +2572,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Choose Style1 Area Css
 =============================================
@@ -2670,7 +2670,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Slogan area style
 =============================================
@@ -2805,7 +2805,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Google Map Style1 Area Css
 =============================================
@@ -2836,7 +2836,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Working Process Area Css
 =============================================
@@ -3048,7 +3048,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Industries Details Area Css
 =============================================
@@ -3197,7 +3197,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Contact Info Style1 Area Css
 =============================================
@@ -3364,9 +3364,9 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
-    Error Page Area Style      
+    Error Page Area Style
 =============================================
 ***/
 .error-page-area {
@@ -3514,7 +3514,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Main Contact Form Area Css
 =============================================
@@ -3652,7 +3652,7 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
     Google Map Area Css
 =============================================
@@ -3779,8 +3779,8 @@ select:focus {
 
 
 
-/*** 
+/***
 =============================================
-    Element Page Css      
+    Element Page Css
 =============================================
 ***/
