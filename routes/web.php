@@ -60,4 +60,4 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('403', fn() => view('errors.403'));
+Route::get('403', abort(403,'Restricted Area'));
