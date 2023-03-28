@@ -56,7 +56,7 @@
                                 <div class="border-t border-gray-200"/>
 
                                 <!-- Authentication -->
-                                <x-splade-form :action="route('logout')">
+                                <x-splade-form :action="route('admin.logout')">
                                     <x-dropdown-link as="button">
                                         {{ __('Log Out') }}
                                     </x-dropdown-link>
@@ -138,7 +138,7 @@
                     @endif
 
                     <!-- Authentication -->
-                    <x-splade-form method="POST" :action="route('logout')">
+                    <x-splade-form method="POST" :action="route('admin.logout')">
                         <x-responsive-nav-link as="button">
                             {{ __('Log Out') }}
                         </x-responsive-nav-link>

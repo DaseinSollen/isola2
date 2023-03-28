@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['splade'])->group(function () {
+
     // Registers routes to support the interactive components...
     Route::spladeWithVueBridge();
 
@@ -44,6 +45,7 @@ Route::middleware(['splade'])->group(function () {
     Route::group(['prefix' => 'admin' ,'middleware'=> ['admin:admin']], function() {
         Route::get('/login', [OperatorController::class, 'loginform']);
         Route::post('/login', [OperatorController::class, 'store'])->name('admin.login');
+        Route::post('/logout', [OperatorController::class, 'destroy'])->name('admin.logout');
     });
 
     Route::group(['middleware' => ['auth:admin', 'verified'],'prefix' => 'admin'],function () {
