@@ -1,4 +1,4 @@
-![La Miniera logo](./resources/images/la-miniera-low-resolution-logo-color-on-transparent-background.svg)
+![La Miniera logo](public/images/la-miniera-low-resolution-logo-color-on-transparent-background.svg)
 
 # Benvenuti su La Miniera 🌱
 [La Miniera](https://www.laminiera.com) è una piattaforma ecologica con sede a Canzo, in provincia di Como. Siamo dedicati a promuovere uno stile di vita sostenibile e a fornire risorse e informazioni su come ridurre l'impatto ambientale.
