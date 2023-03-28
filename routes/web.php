@@ -29,14 +29,7 @@ Route::middleware(['splade'])->group(function () {
     // Registers routes to support async File Uploads with Filepond...
     Route::spladeUploads();
 
-    Route::get('/', function () {
-        return view('welcome', [
-            'canLogin' => Route::has('login'),
-            'canRegister' => Route::has('register'),
-            'laravelVersion' => Application::VERSION,
-            'phpVersion' => PHP_VERSION,
-        ]);
-    });
+
 
 
     // Gruppo di route web per gli utenti ordinari
@@ -56,4 +49,13 @@ Route::middleware(['splade'])->group(function () {
         Route::view('/dashboard', 'operators.dashboard')->name('admin.dashboard');
     });
 
+});
+
+Route::get('/', function () {
+    return view('welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
 });

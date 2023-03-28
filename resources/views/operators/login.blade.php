@@ -2,7 +2,16 @@
 
 <x-authentication-card>
     <x-slot:logo>
-        <x-authentication-card-logo />
+        <div class="flex">
+            <div class="flex justify-center p-3 pr-6">
+                <x-authentication-card-logo/>
+            </div>
+            <div class="flex justify-start p-3 border-gray-200 border-l-2">
+                <img src="{{ asset('images/settings.svg') }}" class="w-16 h-16 object-cover ml-3" alt="Admin Panel">
+            </div>
+
+
+        </div>
     </x-slot:logo>
 
     @if($status = session('status'))
@@ -17,12 +26,6 @@
         <x-splade-checkbox name="remember">{{ __('Remember me') }}</x-splade-checkbox>
 
         <div class="flex items-center justify-end mt-4">
-            @if(Route::has('password.request'))
-                <Link href="{{ route('password.request') }}" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    {{ __('Forgot your password?') }}
-                </Link>
-            @endif
-
             <x-splade-submit :label="__('Log in')" class="ml-4" />
         </div>
     </x-splade-form>

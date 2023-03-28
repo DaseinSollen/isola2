@@ -1,11 +1,11 @@
 <x-action-section>
     <x-slot:title>
         {{ __('Delete Account') }}
-    </x-slot>
+    </x-slot:title>
 
     <x-slot:description>
         {{ __('Permanently delete your account.') }}
-    </x-slot>
+    </x-slot:description>
 
     <x-slot:content>
         <div class="max-w-xl text-sm text-gray-600">
@@ -23,5 +23,5 @@
         >
             <x-splade-submit danger :label="__('Delete Account')" />
         </x-splade-form>
-    </x-slot>
+    </x-slot:content>
 </x-action-section>

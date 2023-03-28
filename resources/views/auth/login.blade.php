@@ -12,7 +12,7 @@
     @endif
 
     <x-splade-form class="space-y-4">
-        <x-splade-input id="email" name="email" type="email" :label="__('Email')" required autofocus />
+        <x-splade-input id="email" name="email" type="email" :label="__('Email')" required autofocus/>
         <x-splade-input id="password" name="password" type="password" :label="__('Password')" required autocomplete="current-password" />
         <x-splade-checkbox name="remember">{{ __('Remember me') }}</x-splade-checkbox>
 
@@ -20,7 +20,12 @@
             <Link href="{{ route('admin.login') }}" class="mr-auto underline text-sm text-gray-600 hover:text-gray-900">
                 {{ __('Operator?') }}
             </Link>
-            <x-splade-submit :label="__('Log in')" class="ml-4" />
+            @if(Route::has('password.request'))
+                <Link href="{{ route('password.request') }}" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    {{ __('Forgot your password?') }}
+                </Link>
+            @endif
+            <x-splade-submit :label="__('Log in')" class="ml-4 bg-[#465746] border-2 border-[#333333] text-gray-100" />
         </div>
     </x-splade-form>
 </x-authentication-card>
