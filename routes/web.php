@@ -38,17 +38,21 @@ Route::middleware(['splade'])->group(function () {
         ]);
     });
 
+
+    // Gruppo di route web per gli utenti ordinari
     Route::middleware(['auth:sanctum', config('jetstream.auth_session'),  'verified'])->group(function () {
         Route::view('/dashboard', 'dashboard')->name('dashboard');
     });
 
+    // Gruppo di route admin per l'autenticazione degli amministratori
     Route::group(['prefix' => 'admin' ,'middleware'=> ['admin:admin']], function() {
-        Route::get('/login', [OperatorController::class, 'loginform']);
+        Route::get('/login', [OperatorController::class, 'loginform'])->name('admin.login.show');
         Route::post('/login', [OperatorController::class, 'store'])->name('admin.login');
-        Route::post('/logout', [OperatorController::class, 'destroy'])->name('admin.logout');
     });
 
-    Route::group(['middleware' => ['auth:admin', 'verified'],'prefix' => 'admin'],function () {
+    // Gruppo di route admin per gli operatori
+    Route::group(['middleware' => ['auth.admin:admin', 'verified'],'prefix' => 'admin'],function () {
+        Route::post('/logout', [OperatorController::class, 'destroy'])->name('admin.logout');
         Route::view('/dashboard', 'operators.dashboard')->name('admin.dashboard');
     });
 

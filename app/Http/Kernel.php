@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\AdminAuthenticate;
 use App\Http\Middleware\AdminRedirectIfAuthenticated;
 use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\EncryptCookies;
@@ -80,6 +81,7 @@ class Kernel extends HttpKernel
     protected $middlewareAliases = [
         'splade' => SpladeMiddleware::class,
         'auth' => Authenticate::class,
+        'auth.admin' => AdminAuthenticate::class,
         'auth.basic' => AuthenticateWithBasicAuth::class,
         'auth.session' => AuthenticateSession::class,
         'cache.headers' => SetCacheHeaders::class,

@@ -1,0 +1,11 @@
+{
+    "codice" : "intero",
+    "nome" : "stringa (nome utente o nome referente azienda)",
+    "cognome" : "stringa (cognome utente o cognome referente azienda)",
+    "codice_fiscale": "stringa|null (azienda)",
+    "ragione_sociale": "stringa|null (privato)",
+    "partita_iva": "stringa|null (privato)",
+    "indirizzo" : "stringa",
+    "numero_civico" : "stringa",
+    "CAP" : "intero"
+}
