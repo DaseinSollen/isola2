@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\OperatorController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,8 +29,6 @@ Route::middleware(['splade'])->group(function () {
     Route::spladeUploads();
 
 
-
-
     // Gruppo di route web per gli utenti ordinari
     Route::middleware(['auth:sanctum', config('jetstream.auth_session'),  'verified'])->group(function () {
         Route::view('/dashboard', 'dashboard')->name('dashboard');
@@ -51,13 +48,4 @@ Route::middleware(['splade'])->group(function () {
 
 });
 
-Route::get('/', function () {
-    return view('welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
-
-Route::get('403', abort(403,'Restricted Area'));
+Route::view('/', 'welcome');
