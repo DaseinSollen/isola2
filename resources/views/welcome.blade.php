@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Westo - Responsive HTML 5 Template</title>
+    <title>La Miniera</title>
 
     <!-- responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700;800;900&display=swap"
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-
 
     <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/aos.css') }}">
@@ -75,47 +73,6 @@
         <div class="layer layer-two"><span class="overlay"></span></div>
         <div class="layer layer-three"><span class="overlay"></span></div>
     </div>
-
-    <!-- page-direction -->
-    <div class="page_direction">
-        <div class="demo-rtl direction_switch"><button class="rtl">RTL</button></div>
-        <div class="demo-ltr direction_switch"><button class="ltr">LTR</button></div>
-    </div>
-    <!-- page-direction end -->
-
-    <!-- switcher menu -->
-    <div class="switcher">
-        <div class="switch_btn">
-            <button><img src="{{ asset('assets/images/icon/color-palette.png') }}" alt="Color Palette"> </button>
-        </div>
-        <div class="switch_menu">
-            <!-- color changer -->
-            <div class="switcher_container">
-                <ul id="styleOptions" title="switch styling">
-                    <li>
-                        <a href="javascript: void(0)" data-theme="blue" class="blue-color"></a>
-                    </li>
-                    <li>
-                        <a href="javascript: void(0)" data-theme="pink" class="pink-color"></a>
-                    </li>
-                    <li>
-                        <a href="javascript: void(0)" data-theme="violet" class="violet-color"></a>
-                    </li>
-                    <li>
-                        <a href="javascript: void(0)" data-theme="crimson" class="crimson-color"></a>
-                    </li>
-                    <li>
-                        <a href="javascript: void(0)" data-theme="orange" class="orange-color"></a>
-                    </li>
-                    <li>
-                        <a href="javascript: void(0)" data-theme="green" class="green-color"></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- end switcher menu -->
-
 
     <!-- Main header-->
     <header class="main-header header-style-one">
@@ -178,10 +135,8 @@
 
                     <!--Start Header Left-->
                     <div class="header-left">
-                        <div class="main-logo-box">
-                            <a href="index.html">
-                                <img src="{{ asset('assets/images/resources/logo.png') }}" alt="Awesome Logo" title="">
-                            </a>
+                        <div class="main-logo-box p-5">
+                            <img src="{{ asset('assets/images/prod/la-miniera-low-resolution-logo-black-on-transparent-background.svg') }}">
                         </div>
                         <div class="header-social-link">
                             <ul class="clearfix">
@@ -390,10 +345,8 @@
             <div class="container">
                 <div class="clearfix">
                     <!--Logo-->
-                    <div class="logo float-left">
-                        <a href="index.html" class="img-responsive">
-                            <img src="{{ asset('assets/images/resources/sticky-logo.png') }}" alt="" title="">
-                        </a>
+                    <div class="logo float-left" style="width: 200px">
+                        <img src="{{ asset('assets/images/prod/la-miniera-low-resolution-logo-black-on-transparent-background.svg') }}" alt="" title="">
                     </div>
                     <!--Right Col-->
                     <div class="right-col float-right">
@@ -441,7 +394,7 @@
             <div class="banner-carousel owl-theme owl-carousel">
                 <!-- Slide -->
                 <div class="slide">
-                    <div class="image-layer" style="background-image:url({{ asset('assets/images/slides/slide-v1-1.jpg') }})">
+                    <div class="image-layer" style="background-image:url({{ asset('assets/images/prod/1920x810_2.jpg') }})">
                     </div>
                     <div class="auto-container">
                         <div class="content">
@@ -466,7 +419,7 @@
 
                 <!-- Slide -->
                 <div class="slide">
-                    <div class="image-layer" style="background-image:url({{ asset('assets/images/slides/slide-v1-2.jpg') }})">
+                    <div class="image-layer" style="background-image:url({{ asset('assets/images/prod/1920x810_0.jpeg') }})">
                     </div>
                     <div class="auto-container">
                         <div class="content">
@@ -491,7 +444,7 @@
 
                 <!-- Slide -->
                 <div class="slide">
-                    <div class="image-layer" style="background-image:url({{ asset('assets/images/slides/slide-v1-3.jpg') }})">
+                    <div class="image-layer" style="background-image:url({{ asset('assets/images/prod/1920x810_1.jpg') }})">
                     </div>
                     <div class="auto-container">
                         <div class="content">
@@ -1064,22 +1017,18 @@
                 <div class="sub-title">
                     <h3>Industries We Serve</h3>
                 </div>
-                <h2>Solutions by Industry</h2>
+                <h2>Comuni coperti dal servizio</h2>
             </div>
             <div class="row">
 
                 <!--Start Single Service Style1-->
                 <div class="col-xl-4 col-lg-4">
                     <div class="single-service-style2">
-                        <div class="img-holder">
-                            <img src="{{ asset('assets/images/services/service-v1-1.jpg') }}" alt="">
-                            <div class="icon-box">
-                                <span class="icon-store"></span>
-                            </div>
+                        <div class="img-holder" style="background-color: #c5baba">
+                            <img src="{{ asset('assets/images/prod/Canzo-Stemma-removebg-preview (1).png') }}" alt="" style="position: relative; object-fit: contain; height: 300px; padding-top: 30px; padding-bottom: 30px;z-index:2">
                         </div>
                         <div class="text-holder text-center">
-                            <h3><a href="industries-details.html">Grocery Stores</a></h3>
-                            <p>Sed quia magni dolores eos qui ratione voluptatem sequi nesciunt eque porro.</p>
+                            <h3>Canzo</h3>
                         </div>
                     </div>
                 </div>
@@ -1088,15 +1037,11 @@
                 <!--Start Single Service Style1-->
                 <div class="col-xl-4 col-lg-4">
                     <div class="single-service-style2">
-                        <div class="img-holder">
-                            <img src="{{ asset('assets/images/services/service-v1-2.jpg') }}" alt="">
-                            <div class="icon-box">
-                                <span class="icon-restaurant"></span>
-                            </div>
+                        <div class="img-holder" style="background-color: #c5baba">
+                            <img src="{{ asset('assets/images/prod/Caglio__Italia_-Stemma-removebg-preview.png') }}" alt="" style="position: relative; object-fit: contain; height: 300px; padding-top: 30px; padding-bottom: 30px;z-index:2">
                         </div>
                         <div class="text-holder text-center">
-                            <h3><a href="industries-details.html">Hotel & Restaurant</a></h3>
-                            <p>Sed quia magni dolores eos qui ratione voluptatem sequi nesciunt eque porro.</p>
+                            <h3>Caglio</h3>
                         </div>
                     </div>
                 </div>
@@ -1105,20 +1050,93 @@
                 <!--Start Single Service Style1-->
                 <div class="col-xl-4 col-lg-4">
                     <div class="single-service-style2">
-                        <div class="img-holder">
-                            <img src="{{ asset('assets/images/services/service-v1-3.jpg') }}" alt="">
-                            <div class="icon-box">
-                                <span class="icon-stethoscope"></span>
-                            </div>
+                        <div class="img-holder" style="background-color: #c5baba">
+                            <img src="{{ asset('assets/images/prod/Caslino_d_Erba-Stemma-removebg-preview.png') }}" alt="" style="position: relative; object-fit: contain; height: 300px; padding-top: 30px; padding-bottom: 30px;z-index:2">
                         </div>
                         <div class="text-holder text-center">
-                            <h3><a href="industries-details.html">Medical & Hospital</a></h3>
-                            <p>Sed quia magni dolores eos qui ratione voluptatem sequi nesciunt eque porro.</p>
+                            <h3>Caslino d'Erba</h3>
                         </div>
                     </div>
                 </div>
                 <!--End Single Service Style1-->
 
+                <!--Start Single Service Style1-->
+                <div class="col-xl-4 col-lg-4">
+                    <div class="single-service-style2">
+                        <div class="img-holder" style="background-color: #c5baba">
+                            <img src="{{ asset('assets/images/prod/Castelmarte-Stemma-removebg-preview (1).png') }}" alt="" style="position: relative; object-fit: contain; height: 300px; padding-top: 30px; padding-bottom: 30px;z-index:2">
+                        </div>
+                        <div class="text-holder text-center">
+                            <h3>Castelmarte</h3>
+                        </div>
+                    </div>
+                </div>
+                <!--End Single Service Style1-->
+
+                <!--Start Single Service Style1-->
+                <div class="col-xl-4 col-lg-4">
+                    <div class="single-service-style2">
+                        <div class="img-holder" style="background-color: #c5baba">
+                            <img src="{{ asset('assets/images/prod/Eupilio-Stemma-removebg-preview.png') }}" alt="" style="position: relative; object-fit: contain; height: 300px; padding-top: 30px; padding-bottom: 30px;z-index:2">
+                        </div>
+                        <div class="text-holder text-center">
+                            <h3>Eupilio</h3>
+                        </div>
+                    </div>
+                </div>
+                <!--End Single Service Style1-->
+
+                <!--Start Single Service Style1-->
+                <div class="col-xl-4 col-lg-4">
+                    <div class="single-service-style2">
+                        <div class="img-holder" style="background-color: #c5baba">
+                            <img src="{{ asset('assets/images/prod/Longone_al_Segrino-Stemma-removebg-preview.png') }}" alt="" style="position: relative; object-fit: contain; height: 300px; padding-top: 30px; padding-bottom: 30px;z-index:2">
+                        </div>
+                        <div class="text-holder text-center">
+                            <h3>Longone al Segrino</h3>
+                        </div>
+                    </div>
+                </div>
+                <!--End Single Service Style1-->
+
+                <!--Start Single Service Style1-->
+                <div class="col-xl-4 col-lg-4">
+                    <div class="single-service-style2">
+                        <div class="img-holder" style="background-color: #c5baba">
+                            <img src="{{ asset('assets/images/prod/Ponte_Lambro-Stemma-removebg-preview.png') }}" alt="" style="position: relative; object-fit: contain; height: 300px; padding-top: 30px; padding-bottom: 30px;z-index:2">
+                        </div>
+                        <div class="text-holder text-center">
+                            <h3>Ponte Lambro</h3>
+                        </div>
+                    </div>
+                </div>
+                <!--End Single Service Style1-->
+
+                <!--Start Single Service Style1-->
+                <div class="col-xl-4 col-lg-4">
+                    <div class="single-service-style2">
+                        <div class="img-holder" style="background-color: #c5baba">
+                            <img src="{{ asset('assets/images/prod/Rezzago-Stemma-removebg-preview.png') }}" alt="" style="position: relative; object-fit: contain; height: 300px; padding-top: 30px; padding-bottom: 30px;z-index:2">
+                        </div>
+                        <div class="text-holder text-center">
+                            <h3>Rezzago</h3>
+                        </div>
+                    </div>
+                </div>
+                <!--End Single Service Style1-->
+
+                <!--Start Single Service Style1-->
+                <div class="col-xl-4 col-lg-4">
+                    <div class="single-service-style2">
+                        <div class="img-holder" style="background-color: #c5baba">
+                            <img src="{{ asset('assets/images/prod/Sormano-Stemma-removebg-preview.png') }}" alt="" style="position: relative; object-fit: contain; height: 300px; padding-top: 30px; padding-bottom: 30px;z-index:2">
+                        </div>
+                        <div class="text-holder text-center">
+                            <h3>Sormano</h3>
+                        </div>
+                    </div>
+                </div>
+                <!--End Single Service Style1-->
             </div>
         </div>
     </section>
