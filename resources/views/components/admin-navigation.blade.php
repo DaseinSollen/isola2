@@ -10,7 +10,7 @@
                     <!-- Logo -->
                     <div class="shrink-0 flex items-center">
                         <Link href="{{ route('admin.dashboard') }}">
-                            <img class="h-12" src="{{ asset('images/settings.svg') }}"/>
+                            <img class="h-12" src="{{ asset('assets/images/prod/settings.svg') }}"/>
                         </Link>
                     </div>
 

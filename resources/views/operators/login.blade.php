@@ -7,7 +7,7 @@
                 <x-authentication-card-logo/>
             </div>
             <div class="flex justify-start p-3 border-gray-200 border-l-2">
-                <img src="{{ asset('images/settings.svg') }}" class="w-16 h-16 object-cover ml-3" alt="Admin Panel">
+                <img src="{{ asset('assets/images/prod/settings.svg') }}" class="w-16 h-16 object-cover ml-3" alt="Admin Panel">
             </div>
 
 
