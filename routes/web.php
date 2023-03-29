@@ -46,7 +46,7 @@ Route::middleware(['splade'])->group(function () {
         Route::view('/dashboard', 'operators.dashboard')->name('admin.dashboard');
     });
 
-    Route::get('/',fn() => Splade::redirectAway(\route('welcome')));
+    Route::get('/',fn() => Splade::redirectAway(\route('welcome')))->name('home');
 
 });
 

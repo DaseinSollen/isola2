@@ -26,6 +26,9 @@
         <x-splade-checkbox name="remember">{{ __('Remember me') }}</x-splade-checkbox>
 
         <div class="flex items-center justify-end mt-4">
+            <Link href="{{ route('home') }}" class="mr-auto underline text-sm text-gray-600 hover:text-gray-900">
+                {{ __('Back to Home') }}
+            </Link>
             <x-splade-submit :label="__('Log in')" class="ml-4" />
         </div>
     </x-splade-form>
