@@ -10,7 +10,7 @@
                     <!-- Logo -->
                     <div class="shrink-0 flex items-center">
                         <Link href="{{ route('dashboard') }}">
-                            <img src="{{ asset('images/la-miniera-low-resolution-logo-black-on-transparent-background.svg') }}" class="h-9 w-auto" alt="La Miniera">
+                            <img src="{{ asset('assets/images/prod/la-miniera-low-resolution-logo-black-on-transparent-background.svg') }}" class="h-9 w-auto" alt="La Miniera">
                         </Link>
                     </div>
 
