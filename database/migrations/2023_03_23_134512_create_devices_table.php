@@ -12,12 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('devices', function (Blueprint $table) {
-            $table->uuid();
+            $table->uuid()->primary();
             $table->ipAddress()->nullable();
             $table->string('name');
             $table->string('serial')->nullable();
             $table->string('auth_key');
             $table->string('status');
+            $table->string('type');
             $table->timestamps();
         });
     }

@@ -56,6 +56,7 @@ class DevicesTable extends AbstractTable
             ->column(key: 'ip_address', label: 'Indirizzo IP',sortable: true)
             ->column(key: 'uuid', label: 'Identificativo', sortable: true)
             ->column(key: 'serial', label: 'Seriale',sortable: true)
+            ->column(key: 'status', label: 'Stato',sortable: true)
             ->column(label: 'Actions');
 
             // ->searchInput()

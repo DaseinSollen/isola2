@@ -34,14 +34,16 @@ class DatabaseSeeder extends Seeder
              'serial' => '000798006008',
              'ip_address' => '192.168.100.50',
              'name' => 'Camera 1',
-             'auth_key' => Hash::make('qIKuMB$!jEuj2Vf5UjxswBxuqgYEb7soiX$KG0y^51^N4KyR2t')
+             'auth_key' => Hash::make('qIKuMB$!jEuj2Vf5UjxswBxuqgYEb7soiX$KG0y^51^N4KyR2t'),
+             'type' => 'camera'
          ]);
-         Device::factory()->create(['name' => 'Camera 2',]);
-         Device::factory()->create(['name' => 'Barcode Reader',]);
-         Device::factory()->create(['name' => 'Sbarra',]);
-         Device::factory()->create(['name' => 'Semaforo',]);
-         Device::factory()->create(['name' => 'Pesa 1',]);
-         Device::factory()->create(['name' => 'Pesa 2',]);
+         Device::factory()->create(['name' => 'Camera 2','type' => 'camera']);
+         Device::factory()->create(['name' => 'Barcode Reader','type' => 'scanner']);
+         Device::factory()->create(['name' => 'Sbarra','type' => 'barrier']);
+         Device::factory()->create(['name' => 'Semaforo','type' => 'traffic-light']);
+         Device::factory()->create(['name' => 'Pesa 1','type' => 'pesa']);
+         Device::factory()->create(['name' => 'Pesa 2','type' => 'pesa']);
+         Device::factory()->create(['name' => 'Interfono','type' => 'phone']);
          User::factory(5)->create();
          CarPlate::factory(10)->create();
          Operator::factory(5)->create();

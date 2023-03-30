@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ApiCameraController;
+use App\Http\Controllers\DeviceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::group(['middleware' => 'device'],function (){
-    Route::post('/camera',[ApiCameraController::class,'new_car']);
+    Route::post('/camera',[DeviceController::class,'new_car']);
+    Route::post('/card',[DeviceController::class,'new_card']);
 });
 
 

@@ -10,7 +10,7 @@ class Device extends Model
 {
     use HasFactory,HasApiTokens;
 
-    protected $fillable = ['uuid','name','ip_address','serial','auth_key','status'];
+    protected $fillable = ['uuid','name','ip_address','serial','auth_key','status','type'];
 
     protected $hidden = ['auth_key'];
 

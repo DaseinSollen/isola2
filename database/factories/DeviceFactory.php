@@ -26,7 +26,8 @@ class DeviceFactory extends Factory
             'ip_address' => $ip,
             'name' => fake()->firstName,
             'auth_key' => Hash::make(fake()->password),
-            'status' =>  Process::run('ping -c 2 '.$ip)->successful() ? 'Online' : 'Offline'
+            'status' =>  Process::run('ping -c 2 '.$ip)->successful() ? 'Online' : 'Offline',
+            'type' => collect(['camera','pesa','scanner','phone','barrier','traffic-light'])->random()
         ];
     }
 }

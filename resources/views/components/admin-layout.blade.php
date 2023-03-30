@@ -17,7 +17,8 @@
         {{ $slot }}
     </main>
 
-    <x-splade-event channel="sensors" listen="NewCar" />
+    <x-splade-event channel="sensors" listen="NewCar,NewCard" />
 {{--        <img :src="events[events.length -1]?.data?.image" class="h-80 w-80 bg-gray-200" alt=""/>--}}
     <x-splade-event channel="car-plate-status" listen="CarPlateFound, CarPlateNotFound" />
+    <x-splade-event channel="card-status" listen="CardFound, CardNotFound" />
 </div>

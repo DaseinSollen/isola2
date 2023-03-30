@@ -26,7 +26,7 @@ class CarPlateNotFound implements ShouldBroadcast
     /**
      * Get the channels the event should broadcast on.
      *
-     * @return array<int, \Illuminate\Broadcasting\Channel>
+     * @return array<int, Channel>
      */
     public function broadcastOn(): array
     {
@@ -40,7 +40,7 @@ class CarPlateNotFound implements ShouldBroadcast
     {
         return [
             Splade::toastOnEvent("La targa {$this->car_plate} non è stata riconosciuta")
-                ->title('Targa riconosciuta')
+                ->title('Targa non riconosciuta')
                 ->autoDismiss(8)
                 ->danger(),
         ];
