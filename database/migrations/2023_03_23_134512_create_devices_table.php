@@ -16,6 +16,7 @@ return new class extends Migration
             $table->ipAddress();
             $table->string('name');
             $table->string('serial');
+            $table->string('auth_key');
             $table->timestamps();
         });
     }

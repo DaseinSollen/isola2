@@ -33,7 +33,8 @@ class DatabaseSeeder extends Seeder
              'uuid' => 'd1857a80-d8e1-33db-82bb-cad2885d5e55',
              'serial' => '000798006008',
              'ip_address' => '192.168.100.50',
-             'name' => 'Camera'
+             'name' => 'Camera',
+             'auth_key' => Hash::make('qIKuMB$!jEuj2Vf5UjxswBxuqgYEb7soiX$KG0y^51^N4KyR2t')
          ]);
          User::factory(5)->create();
          CarPlate::factory(10)->create();

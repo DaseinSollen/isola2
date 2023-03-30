@@ -2,10 +2,12 @@
 
 namespace Database\Factories;
 
+use App\Models\Device;
+use Hash;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Device>
+ * @extends Factory<Device>
  */
 class DeviceFactory extends Factory
 {
@@ -20,7 +22,8 @@ class DeviceFactory extends Factory
             'uuid' => fake()->uuid,
             'serial' => fake()->numberBetween(10000,99999),
             'ip_address' => fake()->ipv4,
-            'name' => fake()->firstName
+            'name' => fake()->firstName,
+            'auth_key' => Hash::make(fake()->password)
         ];
     }
 }
