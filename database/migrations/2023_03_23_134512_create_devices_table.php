@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('devices', function (Blueprint $table) {
             $table->uuid();
-            $table->ipAddress();
+            $table->ipAddress()->nullable();
             $table->string('name');
-            $table->string('serial');
+            $table->string('serial')->nullable();
             $table->string('auth_key');
+            $table->string('status');
             $table->timestamps();
         });
     }

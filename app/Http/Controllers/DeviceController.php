@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Device;
+use App\Tables\DevicesTable;
 use Illuminate\Http\Request;
 
 class DeviceController extends Controller
@@ -12,7 +13,10 @@ class DeviceController extends Controller
      */
     public function index()
     {
-        //
+        return view('devices.index',[
+            'devices' => Device::all(),
+            'devices_table' => DevicesTable::class
+        ]);
     }
 
     /**
@@ -44,7 +48,9 @@ class DeviceController extends Controller
      */
     public function edit(Device $device)
     {
-        //
+        return view('devices.edit',[
+            'device' => $device
+        ]);
     }
 
     /**

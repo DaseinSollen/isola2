@@ -69,7 +69,6 @@ class Kernel extends HttpKernel
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             ThrottleRequests::class.':api',
             SubstituteBindings::class,
-            ValidateDevice::class
         ],
     ];
 
@@ -94,5 +93,6 @@ class Kernel extends HttpKernel
         'throttle' => ThrottleRequests::class,
         'verified' => EnsureEmailIsVerified::class,
         'admin' => AdminRedirectIfAuthenticated::class,
+        'device' => ValidateDevice::class
     ];
 }

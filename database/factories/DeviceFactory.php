@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\Device;
 use Hash;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Process;
 
 /**
  * @extends Factory<Device>
@@ -18,12 +19,14 @@ class DeviceFactory extends Factory
      */
     public function definition(): array
     {
+        $ip = fake()->ipv4;
         return [
             'uuid' => fake()->uuid,
             'serial' => fake()->numberBetween(10000,99999),
-            'ip_address' => fake()->ipv4,
+            'ip_address' => $ip,
             'name' => fake()->firstName,
-            'auth_key' => Hash::make(fake()->password)
+            'auth_key' => Hash::make(fake()->password),
+            'status' =>  Process::run('ping -c 2 '.$ip)->successful() ? 'Online' : 'Offline'
         ];
     }
 }

@@ -33,9 +33,15 @@ class DatabaseSeeder extends Seeder
              'uuid' => 'd1857a80-d8e1-33db-82bb-cad2885d5e55',
              'serial' => '000798006008',
              'ip_address' => '192.168.100.50',
-             'name' => 'Camera',
+             'name' => 'Camera 1',
              'auth_key' => Hash::make('qIKuMB$!jEuj2Vf5UjxswBxuqgYEb7soiX$KG0y^51^N4KyR2t')
          ]);
+         Device::factory()->create(['name' => 'Camera 2',]);
+         Device::factory()->create(['name' => 'Barcode Reader',]);
+         Device::factory()->create(['name' => 'Sbarra',]);
+         Device::factory()->create(['name' => 'Semaforo',]);
+         Device::factory()->create(['name' => 'Pesa 1',]);
+         Device::factory()->create(['name' => 'Pesa 2',]);
          User::factory(5)->create();
          CarPlate::factory(10)->create();
          Operator::factory(5)->create();

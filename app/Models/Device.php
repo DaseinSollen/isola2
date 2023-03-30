@@ -10,7 +10,12 @@ class Device extends Model
 {
     use HasFactory,HasApiTokens;
 
-    protected $fillable = ['uuid','name','ip_address','serial','auth_key'];
+    protected $fillable = ['uuid','name','ip_address','serial','auth_key','status'];
 
     protected $hidden = ['auth_key'];
+
+    public function getRouteKeyName(): string
+    {
+        return 'uuid';
+    }
 }

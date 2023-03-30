@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\OperatorController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +45,7 @@ Route::middleware(['splade'])->group(function () {
     Route::group(['middleware' => ['auth.admin:admin', 'verified'],'prefix' => 'admin'],function () {
         Route::post('/logout', [OperatorController::class, 'destroy'])->name('admin.logout');
         Route::view('/dashboard', 'operators.dashboard')->name('admin.dashboard');
+        Route::resource('/devices', DeviceController::class);
     });
 
     Route::get('/',fn() => Splade::redirectAway(\route('welcome')))->name('home');
