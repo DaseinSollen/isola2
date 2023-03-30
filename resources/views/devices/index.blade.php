@@ -5,7 +5,7 @@
         </h2>
     </x-slot:header>
 
-    <div class="grid grid-cols-4 gap-4 m-5 justify-items-center">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 m-5 justify-items-center">
         @foreach($devices as $device)
             <x-device-card :device="$device"/>
         @endforeach
