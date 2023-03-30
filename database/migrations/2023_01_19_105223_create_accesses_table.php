@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('accesses', function (Blueprint $table) {
             $table->id();
 
-            $table  ->foreignId('user_id')                      // Id Utente
+            $table  ->foreignUlid('user_id')                      // Id Utente
                     ->nullable()
                     ->constrained()
                     ->cascadeOnUpdate()

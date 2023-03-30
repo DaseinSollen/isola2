@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('business_modules', function (Blueprint $table) {
             $table->id();
 
-            $table  ->foreignId('business_id')              // Id azienda
+            $table  ->foreignUlid('business_id')              // Id azienda
                     ->constrained('users')
                     ->cascadeOnUpdate()
                     ->cascadeOnDelete();

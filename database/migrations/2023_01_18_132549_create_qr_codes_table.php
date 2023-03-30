@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('qr_codes', function (Blueprint $table) {
             $table->id();
-            $table  ->foreignId('user_id')
+            $table  ->foreignUlid('user_id')
                     ->constrained()
                     ->cascadeOnDelete()
                     ->cascadeOnUpdate();
