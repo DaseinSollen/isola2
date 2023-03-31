@@ -4,7 +4,11 @@ import time
 import signal
 import sys
 import json
+import uuid
+from datetime import datetime
+import serial
 from serial import SerialTimeoutException
+
 
 # Funzione per gestire il segnale di interruzione (Ctrl+C)
 def signal_handler(sig, frame):
@@ -23,33 +27,39 @@ ser.timeout = 1
 
 while True:
     # Simulare la lettura della bilancia
-    peso = round(random.uniform(50, 150), 2) # Genera un peso casuale compreso tra 50 e 150 kg con massimo 2 cifre dopo la virgola
-    data = {
-        "id": random.randint(1, 100), # Genera un ID casuale compreso tra 1 e 100
-        "data": time.strftime("%Y-%m-%d %H:%M:%S"), # Ottiene la data e l'ora attuali
+    peso = round(random.uniform(50, 150), 2) # Genera un peso casuale compreso tra 50 e 150 kg con massimo 2 cifre decimali
+
+    # Genera un nuovo UUID
+    id = str(uuid.uuid4())
+
+    # Ottiene la data corrente
+    date = datetime.now().strftime("%H:%M:%S %d-%m-%Y")
+
+    # Crea un dizionario contenente le informazioni di id, data e peso
+    data_dict = {
+        "id": id,
+        "data": date,
         "peso": peso
     }
 
-    # Scrivi i dati simulati nel file JSON
-    with open("dati.json", "a") as file:
-        json.dump(data, file)
-        file.write("\n")
+    # Scrive i dati sul file JSON
+    with open("data.json", "a") as f:
+        json.dump(data_dict, f)
+        f.write("\n") # Aggiunge un carattere di nuova linea per separare i record
 
-    # Codifica i dati simulati in formato stringa per inviarli sulla porta seriale
-    data_str = json.dumps(data)
-
-    # Invia i dati simulati alla porta seriale
+    # Converte i dati in una stringa e inviala alla porta seriale
+    data_str = json.dumps(data_dict)
     ser.write(data_str.encode())
 
-    # Aggiungi un ritardo di 1 secondo
+    # Aggiunge un ritardo di 1 secondo
     time.sleep(1)
 
     try:
-        # Leggi i dati ricevuti sulla porta seriale e stampali a schermo
+        # Legge i dati ricevuti sulla porta seriale e stampali a schermo
         received_data = ser.readline().decode().strip()
         print("Dati simulati: ", data_str)
         print("Dati ricevuti: ", received_data)
     except SerialTimeoutException:
-        # Gestisci l'eccezione SerialTimeoutException quando non ci sono dati disponibili sulla porta seriale
+        # Gestisce l'eccezione SerialTimeoutException quando non ci sono dati disponibili sulla porta seriale
         print("Nessun dato disponibile sulla porta seriale")
         continue
